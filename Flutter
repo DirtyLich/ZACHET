@@ -1,50 +1,30 @@
 import 'package:flutter/material.dart';
 
-class RegistrationPage extends StatelessWidget {
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.yellow,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
+    return MaterialApp(
+      title: 'My App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My App'),
+        ),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
+            children: <Widget>[
               Text(
-                'Регистрация',
-                style: TextStyle(
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 32.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Введите ваше имя',
-                  labelText: 'Имя',
-                ),
+                'Привет, мир!',
+                style: TextStyle(fontSize: 24.0),
               ),
               SizedBox(height: 16.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Введите ваш email',
-                  labelText: 'Email',
-                ),
-              ),
-              SizedBox(height: 16.0),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Введите ваш пароль',
-                  labelText: 'Пароль',
-                ),
-              ),
-              SizedBox(height: 32.0),
               ElevatedButton(
-                onPressed: () {},
-                child: Text('Зарегистрироваться'),
+                onPressed: () {
+                  print('Кнопка нажата!');
+                },
+                child: Text('Нажми меня'),
               ),
             ],
           ),
@@ -53,4 +33,3 @@ class RegistrationPage extends StatelessWidget {
     );
   }
 }
-
