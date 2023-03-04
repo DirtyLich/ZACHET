@@ -1,1 +1,56 @@
+import 'package:flutter/material.dart';
+
+class RegistrationPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.yellow,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Регистрация',
+                style: TextStyle(
+                  fontSize: 32.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 32.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Введите ваше имя',
+                  labelText: 'Имя',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Введите ваш email',
+                  labelText: 'Email',
+                ),
+              ),
+              SizedBox(height: 16.0),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Введите ваш пароль',
+                  labelText: 'Пароль',
+                ),
+              ),
+              SizedBox(height: 32.0),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Зарегистрироваться'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
