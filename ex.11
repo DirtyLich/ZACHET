@@ -1,1 +1,21 @@
 /*Разработайте функцию, которая принимает на вход структуру прямоугольник, представленный каноничном виде, и возвращает его периметр.*/
+
+// Определяем структуру прямоугольника
+struct Rectangle {
+    int width;
+    int height;
+};
+
+// Функция, вычисляющая периметр прямоугольника
+int rectangle_perimeter(struct Rectangle rect) {
+    int perimeter = 2 * (rect.width + rect.height);
+    return perimeter;
+}
+
+// Функция main для проверки
+int main() {
+    struct Rectangle rect = {10, 20};
+    int perimeter = rectangle_perimeter(rect);
+    printf("Perimeter: %d\n", perimeter);
+    return 0;
+}
