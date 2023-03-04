@@ -1,1 +1,24 @@
 /*Разработайте функцию, которая принимает на вход строку и возвращает суффикс минимальной длины, начинающийся с точки*/
+
+#include <stdio.h>
+#include <string.h>
+
+char* get_min_suffix(char* str) {
+    int len = strlen(str); // Получаем длину строки
+    int suffix_len = 0; // Переменная для хранения длины найденного суффикса
+    for (int i = len - 1; i >= 0; i--) { // Итерируемся по строке справа налево
+        if (str[i] == '.') { // Если находим точку
+            suffix_len = len - i - 1; // Вычисляем длину суффикса
+            break; // Прерываем цикл
+        }
+    }
+    char* suffix = str + len - suffix_len; // Создаем указатель на найденный суффикс
+    return suffix; // Возвращаем указатель на суффикс
+}
+
+int main() {
+    char str[] = "example.min.txt";
+    char* suffix = get_min_suffix(str);
+    printf("Min suffix: %s", suffix);
+    return 0;
+}
