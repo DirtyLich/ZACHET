@@ -20,7 +20,7 @@ int longest_alphabetic_sequence(char* str) {
             if (current_length > max_length) {
                 max_length = current_length;    // Записываем новый максимум
             }
-            current_length = 1;     // Сбрасываем текущую длину до 1, чтобы начать поиск новой последовательности
+            current_length = 0;     // Сбрасываем текущую длину до 0, чтобы начать поиск новой последовательности
         }
     }
     
