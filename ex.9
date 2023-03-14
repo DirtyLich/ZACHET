@@ -1,1 +1,41 @@
-/*Разработайте функцию, принимающую на вход двумерный массив и выполняющую его заполнение по спирали*/
+/*Разработайте функцию, принимающую на вход двумерный массив и выполняющую его заполнение сверху вниз*/
+#include <stdio.h>
+
+const int MAX_ROWS = 5;
+const int MAX_COLS = 5;
+
+// Прототип функции fillArray
+void fillArray(int array[][MAX_COLS], int rows, int cols);
+
+int main() {
+int array[MAX_ROWS][MAX_COLS];
+
+// Вызываем функцию fillArray для заполнения массива
+fillArray(array, MAX_ROWS, MAX_COLS);
+
+// Выводим содержимое массива на экран
+for (int i = 0; i < MAX_ROWS; i++) {
+for (int j = 0; j < MAX_COLS; j++) {
+printf("%d\t", array[i][j]);
+}
+printf("\n");
+}
+
+return 0;
+}
+void fillArray(int array[][MAX_COLS], int rows, int cols) {
+int i, j, value = 1;
+
+// Заполняем первый столбец снизу вверх, затем второй столбец сверху вниз и т.д.
+for (j = 0; j < cols; j++) {
+if (j % 2 == 0) { // если j - четное число
+for (i = rows - 1; i >= 0; i--) {
+array[i][j] = value++;
+}
+} else { // если j - нечетное число
+for (i = 0; i < rows; i++) {
+array[i][j] = value++;
+}
+}
+}
+}
