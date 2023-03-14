@@ -13,3 +13,15 @@ int multiply_digits(char *str) {
     
     return result;
 }
+int main()
+{
+  int size;
+printf("Введите код во символов: \n");
+scanf("%d",&size);
+char str[size];
+for(int i = 0; i < size; i++)
+scanf("%s",&str[i]);
+int result = multiply_digits(str);
+printf("%d", result);
+return 0;
+}
